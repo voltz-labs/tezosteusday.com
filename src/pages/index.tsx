@@ -2,8 +2,15 @@ import { useEffect, useState } from "react";
 import { getSecondsToTuesday } from "../functions/getSecondsToTuesday";
 import Teusday from "../components/Teusday";
 import Countdown from "../components/Countdown";
+import { GetServerSideProps } from "next";
+import { songs } from "../utils/songs";
+import { getRandomItem } from "../functions/getRandomItem";
 
-const Home = () => {
+interface HomeProps {
+  song: string;
+}
+
+const Home = ({ song }: HomeProps) => {
   const [seconds, setSeconds] = useState(getSecondsToTuesday());
 
   useEffect(() => {
@@ -21,10 +28,20 @@ const Home = () => {
   }, [seconds]);
 
   if (seconds === 0) {
-    return <Teusday />;
+    return <Teusday song={song} />;
   }
 
   return <Countdown seconds={seconds} />;
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const song = getRandomItem(songs);
+
+  return {
+    props: {
+      song,
+    },
+  };
 };
 
 export default Home;
