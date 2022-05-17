@@ -5,11 +5,13 @@ import { getSecondsBetween } from "./getSecondsBetween";
 export const getSecondsToTuesday = () => {
   const now = Date.now();
 
-  const isTuesday = getDay(now) === 2;
+  const offset = new Date().getTimezoneOffset() * 60 * 1000;
+
+  const isTuesday = getDay(now + offset) === 2;
 
   if (isTuesday) {
     return 0;
   }
 
-  return getSecondsBetween(now, getNextDayOfWeek("Tuesday", now));
+  return getSecondsBetween(now, getNextDayOfWeek("Tuesday", now) - offset);
 };

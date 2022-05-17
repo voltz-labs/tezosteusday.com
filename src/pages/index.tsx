@@ -8,9 +8,10 @@ import { getRandomItem } from "../functions/getRandomItem";
 
 interface HomeProps {
   song: string;
+  timestamp: number;
 }
 
-const Home = ({ song }: HomeProps) => {
+const Home = ({ song, timestamp }: HomeProps) => {
   const [seconds, setSeconds] = useState(getSecondsToTuesday());
 
   useEffect(() => {
@@ -36,10 +37,12 @@ const Home = ({ song }: HomeProps) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const song = getRandomItem(songs);
+  const timestamp = Date.now();
 
   return {
     props: {
       song,
+      timestamp,
     },
   };
 };
