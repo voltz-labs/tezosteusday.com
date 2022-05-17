@@ -42,16 +42,21 @@ const Teusday = ({ song }: TeusdayProps) => {
 
   if (!show) {
     return (
-      <Page>
-        <div className="h-100 d-flex align-items-center justify-content-center">
-          <button
-            className="btn btn-secondary btn-lg display-1 fw-bolder"
-            onClick={() => setShow(true)}
-          >
-            Click to see
-          </button>
-        </div>
-      </Page>
+      <>
+        <Head>
+          <title>Tezos Teusday</title>
+        </Head>
+        <Page>
+          <div className="h-100 d-flex align-items-center justify-content-center">
+            <button
+              className="btn btn-secondary btn-lg display-1 fw-bolder"
+              onClick={() => setShow(true)}
+            >
+              Click to see
+            </button>
+          </div>
+        </Page>
+      </>
     );
   }
 
