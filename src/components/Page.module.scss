@@ -1,0 +1,7 @@
+.page {
+  display: grid;
+  min-height: 100%;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: auto 1fr auto;
+  font-stretch: ultra-expanded;
+}
