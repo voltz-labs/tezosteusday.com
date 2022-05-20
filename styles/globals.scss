@@ -1,0 +1,20 @@
+$primary: #0f61ff;
+// $secondary: #1d2227;
+$secondary: #003ee0;
+$light: #f6f8fa;
+$dark: #030405;
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~@fontsource/roboto";
+@import "~@fontsource/roboto/900.css";
+
+html,
+body,
+#__next {
+  height: 100%;
+  min-width: 220px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}

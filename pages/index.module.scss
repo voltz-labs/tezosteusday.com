@@ -1,0 +1,17 @@
+.root {
+  display: grid;
+  min-height: 100%;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: auto 1fr auto;
+  font-stretch: ultra-expanded;
+}
+
+.brand {
+  letter-spacing: 4px;
+}
+
+.timer {
+  font-size: 22vw;
+  font-weight: 900;
+  cursor: default;
+}
