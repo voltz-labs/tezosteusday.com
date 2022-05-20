@@ -11,7 +11,14 @@
 }
 
 .timer {
-  font-size: 22vw;
+  font-size: 17vw;
   font-weight: 900;
   cursor: default;
+  font-family: "Source Code Pro", monospace;
+}
+
+.main {
+  min-height: 100%;
+  grid-template-areas: "title" "timer";
+  grid-template-rows: auto 1fr;
 }
