@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="d-flex align-items-center justify-content-end">
           <a
             className="link-light text-decoration-none"
-            href="https://github.com/voltz-labs/tezosteusday.com"
+            href="https://github.com/voltz-labs/tezostuesday.com"
             target="_blank"
             rel="noreferrer"
           >

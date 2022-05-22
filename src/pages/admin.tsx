@@ -2,7 +2,7 @@ import { Page } from "../components/Page";
 import Head from "next/head";
 import React, { useRef } from "react";
 import { GetServerSideProps } from "next";
-import Teusday from "../components/Teusday";
+import Tuesday from "../components/Tuesday";
 import { getRandomItem } from "../functions/getRandomItem";
 
 interface AdminProps {
@@ -57,13 +57,13 @@ const Admin = ({ links, song }: AdminProps) => {
   };
 
   if (links) {
-    return <Teusday song={song} links={links} />;
+    return <Tuesday song={song} links={links} />;
   }
 
   return (
     <>
       <Head>
-        <title>Tezos Teusday &bull; Administrator Section</title>
+        <title>Tezos Tuesday &bull; Administrator Section</title>
       </Head>
       <Page>
         <div className="container py-5">

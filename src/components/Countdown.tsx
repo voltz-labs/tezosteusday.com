@@ -11,19 +11,19 @@ export interface CountdownProps {
 const Countdown = ({ seconds }: CountdownProps) => {
   const time = getTimeFromSeconds(seconds);
 
-  const message = `Get ready for the next @TezosTeusday. Only ${time.format()} hours to go! #TezosTeusday #Tezos.`;
+  const message = `Get ready for the next @TezosTuesday. Only ${time.format()} hours to go! #TezosTuesday #Tezos.`;
 
   return (
     <>
       <Head>
-        <title>Tezos Teusday &bull; {time.format()}</title>
+        <title>Tezos Tuesday &bull; {time.format()}</title>
       </Head>
       <Page>
         <div className={`${styles.main} container-fluid d-grid pb-5`}>
           <div className="row">
             <div className="col">
               <div className="px-5 pt-5">
-                <p className="fw-bold fs-2">Get ready for #TezosTeusday!</p>
+                <p className="fw-bold fs-2">Get ready for #TezosTuesday!</p>
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@ const Countdown = ({ seconds }: CountdownProps) => {
                 suppressHydrationWarning
                 className="btn btn-outline-light py-3 px-5 fs-4 fw-bold d-flex gap-3 align-items-center justify-content-center"
                 href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
-                  "https://tezosteusday.com"
+                  "https://tezostuesday.com"
                 )}&text=${encodeURIComponent(message)}`}
                 target="_blank"
                 rel="noreferrer"
@@ -49,9 +49,9 @@ const Countdown = ({ seconds }: CountdownProps) => {
                 className="twitter-timeline"
                 data-width="80vw"
                 data-height="250"
-                href="https://twitter.com/TezosTeusday"
+                href="https://twitter.com/TezosTuesday"
               >
-                A Twitter List by TezosTeusday
+                A Twitter List by TezosTuesday
               </a>
               <script
                 async

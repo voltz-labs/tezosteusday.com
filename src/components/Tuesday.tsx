@@ -3,12 +3,12 @@ import { Page } from "./Page";
 import Confetti from "react-confetti";
 import Head from "next/head";
 
-interface TeusdayProps {
+interface TuesdayProps {
   song: string;
   links: string[];
 }
 
-const Teusday = ({ song, links }: TeusdayProps) => {
+const Tuesday = ({ song, links }: TuesdayProps) => {
   const [confetti, setConfetti] = useState<{
     height: number;
     width: number;
@@ -45,7 +45,7 @@ const Teusday = ({ song, links }: TeusdayProps) => {
     return (
       <>
         <Head>
-          <title>Tezos Teusday</title>
+          <title>Tezos Tuesday</title>
         </Head>
         <Page>
           <div className="h-100 d-flex align-items-center justify-content-center">
@@ -64,7 +64,7 @@ const Teusday = ({ song, links }: TeusdayProps) => {
   return (
     <>
       <Head>
-        <title>Tezos Teusday</title>
+        <title>Tezos Tuesday</title>
       </Head>
       <Page>
         {confetti && (
@@ -93,7 +93,9 @@ const Teusday = ({ song, links }: TeusdayProps) => {
         )}
         <div className="py-3">
           <div className="marquee-container">
-            <p className="marquee text-light fs-3 w-100">Current Song: {currentSong}</p>
+            <p className="marquee text-light fs-3 w-100">
+              Current Song: {currentSong}
+            </p>
           </div>
         </div>
         <div className="text-white d-flex align-items-center justify-content-center">
@@ -122,4 +124,4 @@ const Teusday = ({ song, links }: TeusdayProps) => {
   );
 };
 
-export default Teusday;
+export default Tuesday;

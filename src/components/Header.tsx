@@ -8,7 +8,7 @@ const Header = () => {
         <div className="container-fluid px-5">
           <Link href="/">
             <a className={`${styles.brand} navbar-brand fs-1 fw-bolder`}>
-              #TezosTeusday
+              #TezosTuesday
             </a>
           </Link>
         </div>

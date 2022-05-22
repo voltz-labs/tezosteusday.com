@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getSecondsToTuesday } from "../functions/getSecondsToTuesday";
-import Teusday from "../components/Teusday";
+import Tuesday from "../components/Tuesday";
 import Countdown from "../components/Countdown";
 import { GetServerSideProps } from "next";
 import { songs } from "../utils/songs";
@@ -29,7 +29,7 @@ const Home = ({ song, links }: HomeProps) => {
   }, [seconds]);
 
   if (seconds === 0) {
-    return <Teusday song={song} links={links} />;
+    return <Tuesday song={song} links={links} />;
   }
 
   return <Countdown seconds={seconds} />;
