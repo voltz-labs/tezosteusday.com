@@ -36,7 +36,7 @@ const Countdown = ({ seconds }: CountdownProps) => {
                 suppressHydrationWarning
                 className="btn btn-outline-light py-3 px-5 fs-4 fw-bold d-flex gap-3 align-items-center justify-content-center"
                 href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
-                  "https://tezostuesday.com"
+                  "https://tezostuesday.net"
                 )}&text=${encodeURIComponent(message)}`}
                 target="_blank"
                 rel="noreferrer"
