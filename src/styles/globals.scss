@@ -17,3 +17,35 @@ body,
 body {
   font-family: "Roboto", sans-serif;
 }
+
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee {
+  animation: marquee 10s linear infinite;
+  position: absolute;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+$all_colors: #d7fcd4, #8e44ad, #1abc9c, #d17a22, #b5446e, #34495e, #c3f73a,
+  #2980b9, #f1c40f, #110b11, #f991cc;
+
+@for $i from 0 through 10 {
+  @keyframes #{'colorchange-' + $i} {
+    @for $j from 0 through 10 {
+      #{$j * 10%} {
+        color: nth($all_colors, ($i + $j) % 11 + 1);
+      }
+    }
+  }
+}

@@ -5,9 +5,10 @@ import Head from "next/head";
 
 interface TeusdayProps {
   song: string;
+  links: string[];
 }
 
-const Teusday = ({ song }: TeusdayProps) => {
+const Teusday = ({ song, links }: TeusdayProps) => {
   const [confetti, setConfetti] = useState<{
     height: number;
     width: number;
@@ -35,7 +36,7 @@ const Teusday = ({ song }: TeusdayProps) => {
   useEffect(() => {
     if (typeof window !== "undefined" && show) {
       if (audio.current) {
-        audio.current.play().then(() => console.log("playing"));
+        audio.current.play();
       }
     }
   }, [show]);
@@ -90,9 +91,32 @@ const Teusday = ({ song }: TeusdayProps) => {
             }}
           />
         )}
-        <marquee>
-          <span className="text-light">Current Song: {currentSong}</span>
-        </marquee>
+        <div className="py-3">
+          <marquee>
+            <span className="text-light">Current Song: {currentSong}</span>
+          </marquee>
+        </div>
+        <div className="text-white d-flex align-items-center justify-content-center">
+          <ul className="display-2 lh-4 list-unstyled">
+            {links.map((link, index) => (
+              <li key={index} className="py-5 text-center">
+                <a
+                  className="text-decoration-none fw-bold"
+                  href={link}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    animation: `colorchange-${
+                      (index % 11) + 1
+                    } 20s infinite alternate`,
+                  }}
+                >
+                  {link}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Page>
     </>
   );

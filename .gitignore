@@ -33,4 +33,6 @@ yarn-error.log*
 
 .env
 
-public/songs
+public/songs/*
+!public/songs/.gitkeep
+public/links.txt

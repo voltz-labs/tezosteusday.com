@@ -8,10 +8,10 @@ import { getRandomItem } from "../functions/getRandomItem";
 
 interface HomeProps {
   song: string;
-  timestamp: number;
+  links: string[];
 }
 
-const Home = ({ song, timestamp }: HomeProps) => {
+const Home = ({ song, links }: HomeProps) => {
   const [seconds, setSeconds] = useState(getSecondsToTuesday());
 
   useEffect(() => {
@@ -29,20 +29,28 @@ const Home = ({ song, timestamp }: HomeProps) => {
   }, [seconds]);
 
   if (seconds === 0) {
-    return <Teusday song={song} />;
+    return <Teusday song={song} links={links} />;
   }
 
   return <Countdown seconds={seconds} />;
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const song = getRandomItem(songs);
-  const timestamp = Date.now();
+  const song = getRandomItem(songs.getSongs());
+  const isTuesday = getSecondsToTuesday() === 0;
+
+  const { links } = await import("../utils/links");
+
+  let currentLinks = [];
+
+  if (isTuesday) {
+    currentLinks = links.getLinks();
+  }
 
   return {
     props: {
       song,
-      timestamp,
+      links: currentLinks,
     },
   };
 };
