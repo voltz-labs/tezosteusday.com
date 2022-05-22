@@ -19,13 +19,17 @@ body {
 }
 
 .marquee-container {
+  height: 50px;
   overflow: hidden;
   position: relative;
 }
 
 .marquee {
-  animation: marquee 10s linear infinite;
   position: absolute;
+  line-height: 50px;
+  text-align: center;
+  transform: translateX(100%);
+  animation: marquee 8s linear infinite;
 }
 
 @keyframes marquee {

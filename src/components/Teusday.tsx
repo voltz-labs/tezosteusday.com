@@ -92,9 +92,9 @@ const Teusday = ({ song, links }: TeusdayProps) => {
           />
         )}
         <div className="py-3">
-          <marquee>
-            <span className="text-light">Current Song: {currentSong}</span>
-          </marquee>
+          <div className="marquee-container">
+            <p className="marquee text-light fs-3 w-100">Current Song: {currentSong}</p>
+          </div>
         </div>
         <div className="text-white d-flex align-items-center justify-content-center">
           <ul className="display-2 lh-4 list-unstyled">
