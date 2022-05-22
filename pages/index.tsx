@@ -35,7 +35,7 @@ const Home = () => {
 
       return () => clearInterval(interval);
     }
-  }, []);
+  }, [seconds]);
 
   const now = Date.now();
 
@@ -50,6 +50,8 @@ const Home = () => {
     .padStart(2, "0")}:${difference.minutes
     .toString()
     .padStart(2, "0")}:${difference.seconds.toString().padStart(2, "0")}`;
+
+  const message = `Get ready for the next @TezosTeusday. Only ${time} hours to go! #TezosTeusday #Tezos.`;
 
   return (
     <div className={styles.root}>
@@ -74,23 +76,37 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="d-flex flex-column align-items-center justify-content-top">
-            <div className="">
-              <div className={`${styles.timer}`}>{time}</div>
+          <div className="d-flex flex-column align-items-center justify-content-start">
+            <div suppressHydrationWarning className={`${styles.timer}`}>
+              {time}
             </div>
-            <div className="">
+            <div className="d-flex w-100 px-5 align-items-center justify-content-center">
               <a
+                suppressHydrationWarning
                 className="btn btn-outline-light py-3 px-5 fs-4 fw-bold d-flex gap-3 align-items-center justify-content-center"
                 href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
                   "https://tezosteusday.com"
-                )}&text=${encodeURIComponent(
-                  `I'm ready for #TezosTeusday\n${time} to Tezos Teusday!`
-                )}`}
+                )}&text=${encodeURIComponent(message)}`}
                 target="_blank"
                 rel="noreferrer"
               >
                 <BsTwitter size={48} /> Share
               </a>
+            </div>
+            <div className="d-flex d-md-none pt-5">
+              <a
+                className="twitter-timeline"
+                data-width="80vw"
+                data-height="250"
+                href="https://twitter.com/TezosTeusday"
+              >
+                A Twitter List by TezosTeusday
+              </a>
+              <script
+                async
+                src="https://platform.twitter.com/widgets.js"
+                charSet="utf-8"
+              ></script>
             </div>
           </div>
         </div>
